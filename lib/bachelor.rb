@@ -18,10 +18,13 @@ def count_contestants_by_hometown(data,town)
 end
 
 def get_occupation(data,hometown)
-    data.map{|season,datalist|
-    datalist.map{|list| return list[:"occupation"] if list[:"hometown"]== hometown }
- }
-end
+    data.map do|season,datalist|
+    datalist.map do |list,info|  if list[:"hometown"]==hometown
+    return list[:"occupation"]
+        end
+      end
+    end
+ end  
 
 #def get_average_age_for_season(data, season)
   # code here
