@@ -1,31 +1,25 @@
+def get_contestant_name(data,occupation)
+          data.map{|season,datalist|
+          datalist.map{|list| return list[:name] if list[:"occupation"] == occupation}
+        }
+end
+
 def get_first_name_of_season_winner(data,season)
     foundname=data[:"#{season}"][0][:"name"].split(" ")
     foundname[0].to_s
-    end
+end
 
-def get_contestant_name(data,occupation)
-            data.each{|season,contestants|
-                      contestants.each{|list,info| if list[:"occupation"] == "#{occupation}"
-                            return list[:name]
-                      end
-                        }
-            }
-  end
-
-  def count_contestants_by_hometown(data,town)
+def count_contestants_by_hometown(data,town)
   count = 0
-   data.map{|season,datalist|
-     datalist.map{|list,info| if list[:"hometown"]=="#{town}"
-    count += 1
-     end
-     }
-   }
-    count
-  end
+      data.map{|season,datalist|
+      datalist.map{|list| count+= 1 if list[:"hometown"]== town}
+              }
+      count
+end
 
 def get_occupation(data,hometown)
-    data.map{|season,datalist|
-    datalist.map{|list| return list[:occupation] if list[:"hometown"]== hometown }
+    data.each{|season,datalist|
+    datalist.each{|list| return list[:occupation] if list[:"hometown"]== hometown }
  }
 end
 
