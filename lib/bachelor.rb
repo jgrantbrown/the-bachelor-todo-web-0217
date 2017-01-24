@@ -5,7 +5,7 @@ def get_contestant_name(data,occupation)
 end
 
 def get_first_name_of_season_winner(data,season)
-    foundname=data["season"][0]["name"].split(" ")
+    foundname=data[:"#{season}"][0]["name"].split(" ")
     foundname[0].to_s
 end
 
