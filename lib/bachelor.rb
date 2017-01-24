@@ -22,9 +22,9 @@ def get_occupation(data,hometown)
         }
  end
 
-def get_average_age_for_season(data,season)
-   new_array=[]
-   data["season"].map{|k| new_array<<k["age"].to_i}
-   avgage=new_array.inject{ |sum,x| sum + x }/new_array.size
-   return avgage.to_f.ceil
-end
+ def get_average_age_for_season(data,season)
+    new_array=[ ]
+    data[:"#{season}"].map{|k| new_array<<k[:"age"].to_f }
+                 avgage=new_array.inject{ |sum,x| sum + x }/new_array.size
+                 return avgage.ceil
+ end
