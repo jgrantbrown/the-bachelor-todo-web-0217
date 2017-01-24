@@ -18,8 +18,8 @@ def count_contestants_by_hometown(data,town)
 end
 
 def get_occupation(data,hometown)
-    data.each{|season,datalist|
-    datalist.each{|list| return list[:"occupation"] if list[:"hometown"]== hometown }
+    data.map{|season,datalist|
+    datalist.map{|list| return list[:"occupation"] if list[:"hometown"]== hometown }
  }
 end
 
