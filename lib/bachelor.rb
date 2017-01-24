@@ -1,5 +1,5 @@
 def get_first_name_of_season_winner(data,season)
-        data["#{season}"].each{|k| return k["name"].split(" ").first if k[:"status"]=="Winner"}
+        data["season"].each{|k| return k["name"].split(" ").first if k[:"status"]=="Winner"}
 end
 
 def get_contestant_name(data,occupation)
