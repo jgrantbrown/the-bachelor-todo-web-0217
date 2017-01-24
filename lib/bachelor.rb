@@ -25,7 +25,7 @@ def get_contestant_name(data,occupation)
 
 def get_occupation(data,hometown)
     data.map{|season,datalist|
-    datalist.map{|list,info| return list[:occupation] if list[:"hometown"]== hometown }
+    datalist.map{|list| return list[:occupation] if list[:"hometown"]== hometown }
  }
 end
 
