@@ -5,8 +5,8 @@ def get_first_name_of_season_winner(data,season)
     end
 
 def get_contestant_name(data,occupation)
-            data.each{|season,contestants|
-                      contestants.each{|list,info| if list[:"occupation"] == "#{occupation}"
+            data.map{|season,contestants|
+                      contestants.map{|list,info| if list[:"occupation"] == "#{occupation}"
                             return list[:name]
                       end
                         }
