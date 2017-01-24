@@ -7,12 +7,13 @@ def get_first_name_of_season_winner(data,season)
 def get_contestant_name(data,occupation)
             data.map{|season,contestants|
                       contestants.map{|list,info| if list[:"occupation"] == "#{occupation}"
-                            return list[:name]
+                            return list[:name].to_s
                       end
                         }
             }
   end
 
+=begin
 def get_contestants_by_hometown(data,town)
       data.map{|season,datalist|
       datalist.map{|list,info| if list[:"hometown"]=="#{town}"
@@ -21,7 +22,7 @@ def get_contestants_by_hometown(data,town)
       }
       }
 end
-
+=end
 def get_occupation(data, hometown)
   # code here
 end
