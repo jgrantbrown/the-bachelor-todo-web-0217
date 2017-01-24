@@ -19,7 +19,7 @@ end
 
 def get_occupation(data,hometown)
     data.each{|season,datalist|
-    datalist.each{|list| return list[:occupation] if list[:"hometown"]== hometown }
+    datalist.each{|list| return list[:"occupation"] if list[:"hometown"]== hometown }
  }
 end
 
