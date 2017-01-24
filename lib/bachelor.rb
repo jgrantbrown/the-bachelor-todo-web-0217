@@ -5,8 +5,11 @@ def get_contestant_name(data,occupation)
 end
 
 def get_first_name_of_season_winner(data,season)
-    foundname=data[:"#{season}"][0]["name"].split(" ")
-    foundname[0].to_s
+data[:"#{season}"].each{|k|
+  if k[:status]=="Winner"
+    return k[:name].split(" ").first
+end
+}
 end
 
 def count_contestants_by_hometown(data,town)
@@ -22,7 +25,3 @@ def get_occupation(data,hometown)
     datalist.map{|list| return list["occupation"]  if list["hometown"]==hometown}
         }
  end
-
-#def get_average_age_for_season(data, season)
-  # code here
-#end
