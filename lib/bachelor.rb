@@ -13,16 +13,17 @@ def get_contestant_name(data,occupation)
             }
   end
 
-=begin
-def get_contestants_by_hometown(data,town)
-      data.map{|season,datalist|
-      datalist.map{|list,info| if list[:"hometown"]=="#{town}"
-        list[:"hometown"]
-      end
-      }
-      }
-end
-=end
+  def get_contestants_by_hometown(data,town)
+  count = 0
+   data.map{|season,datalist|
+     datalist.map{|list,info| if list[:"hometown"]=="#{town}"
+    count += 1
+     end
+     }
+   }
+    count
+  end
+   
 def get_occupation(data, hometown)
   # code here
 end
