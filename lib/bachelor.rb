@@ -1,5 +1,5 @@
 def get_first_name_of_season_winner(data,season)
-        data[:"#{season}"].each{|k| return k[:"name"].split(" ").first if k[:"status"]=="Winner"}
+          data[:"#{season}"].each{|k| return k[:"name"].split(" ").first if k[:"status"]=="Winner"}
 end
 
 def get_contestant_name(data,occupation)
@@ -25,6 +25,5 @@ def get_occupation(data,hometown)
  def get_average_age_for_season(data,season)
    new_array=[ ]
    data[:"#{season}"].map{|k| new_array<<k[:"age"].to_i}
-               totalage= new_array.inject{|sum,x| sum +x}
-               avgage=(totalage/new_array.size.to_f).round
+               return (new_array.inject{|sum,x| sum + x }/(new_array.size.to_f)).round
 end
